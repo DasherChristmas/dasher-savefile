@@ -1,0 +1,29 @@
+{
+  "name": "dasher-savefile",
+  "version": "1.0.0",
+  "description": "The save file format for dasher sequences, a binary alternative to xLights's `xlsx` xml files.",
+  "main": "dist/saveFile.js",
+  "scripts": {
+    "test": "ts-node src/test.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DasherChristmas/dasher-savefile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DasherChristmas/dasher-savefile/issues"
+  },
+  "homepage": "https://github.com/DasherChristmas/dasher-savefile#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
