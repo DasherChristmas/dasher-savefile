@@ -39,10 +39,14 @@ The rest of the block consists of the number of Effect Blocks specified by `Effe
 
 > Byte indices are from the start of the effect's block.
 
-| Byte Index | Type     | Use                                                                               |
-| ---------- | -------- | --------------------------------------------------------------------------------- |
-| 0          | `Uint32` | Block Length - The length of the effect block, or `12` + length of the effect ID. |
-| 4          | `BigInt` | Start Frame - The frame that the effect starts on.                                |
-| 12         | `string` | Effect ID - The Unique ID of the effect used in the editor.                       |
+| Byte Index | Type     | Use                                                                                                       |
+| ---------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| 0          | `Uint32` | Block Length - The length of the effect block, or `22` + length of the effect ID + length of effect data. |
+| 4          | `Uint16` | Data Start - The index at which the effect data starts.                                                   |
+| 6          | `BigInt` | Start Frame - The frame that the effect's range starts on.                                                |
+| 14         | `BigInt` | End Frame - The frame that the effect's range ends on.                                                    |
+| 22         | `string` | Effect ID - The Unique ID of the effect used in the editor.                                               |
 
-Note that Effect IDs for custom effects loaded locally (rather than installed through the effects store) may have conflicting ids with effects on other PCs when sharing sequences.
+The rest of the block is dedicated to a `JSON` string that contains the input data for the effect, which tarts at byte indicated by `Data Start`.
+
+> Note that Effect IDs for custom effects loaded locally (rather than installed through the effects store) may have conflicting ids with effects on other PCs when sharing sequences.
